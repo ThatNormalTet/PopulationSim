@@ -9,6 +9,11 @@ public class Person {
     List<Person> parents;
     List<Person> children = new ArrayList<>();
     private List<Person> degreeSearch = new ArrayList<>();
+    public static int maxId = 0;
+
+    public static int getNextIdPerson() {
+        return ++Person.maxId;
+    }
 
     public Person(int id, boolean sex, List<Person> parents) {
         this.id = id;
@@ -45,5 +50,21 @@ public class Person {
         }
 
         return isBrother;
+    }
+
+    public List<Person> getDegreeSearch() {
+        return degreeSearch;
+    }
+
+    public void setDegreeSearch(List<Person> degreeSearch) {
+        this.degreeSearch = degreeSearch;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id: \033[1;32m" + id + "\u001B[0m" +
+                ", sex: " + (this.sex ? "\u001B[36m♂" : "\u001B[35m♀") +
+                "\u001B[0m}";
     }
 }
