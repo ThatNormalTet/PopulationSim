@@ -8,7 +8,6 @@ public class Person {
     boolean sex;
     List<Person> parents;
     List<Person> children = new ArrayList<>();
-    private List<Person> degreeSearch = new ArrayList<>();
 
     public Person(int id, boolean sex, List<Person> parents) {
         this.id = id;
@@ -45,5 +44,13 @@ public class Person {
         }
 
         return isBrother;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", sex=" + sex +
+                '}';
     }
 }

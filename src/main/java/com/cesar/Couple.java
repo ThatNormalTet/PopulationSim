@@ -27,4 +27,12 @@ public class Couple {
         partner1.children.add(child);
         partner2.children.add(child);
     }
+
+    @Override
+    public String toString() {
+        return "Couple{" +
+                "partner1=" + partner1 +
+                ", partner2=" + partner2 +
+                '}';
+    }
 }
